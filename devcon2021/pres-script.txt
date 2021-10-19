@@ -1,0 +1,35 @@
+Alright it looks like it's time to get started, so let's do this.
+
+Now this presentation will be a little bit different than what you may be used
+to, because everything you see on this screen for the next 45 minutes, or so,
+will be completely contained within a terminal emulator.
+
+And when I say everything, I mean everything.
+
+<title>
+
+the command line
+
+What you see here is probably the coolest part of this presentation, so I'll
+let you enjoy it for a moment.
+
+And that moment is now over, sorry.
+
+Who am I?
+
+My name is Alan Morgan. I'm a Software Engineer here at Clearwater Analytics.
+I've been using Linux for about 10 years now. And I'm obsessed with the command
+line.
+
+I know what you're thinking. The command line? Come on Alan. We live in the
+21st century. People use graphical user interfaces now. They're easy, they
+look nice, and they're very useful.
+
+Ok, I agree. Graphical user interfaces are easy, they do look nice, and they
+are useful. But the command line is useful too. It can look nice if you want.
+And it doesn't have to be hard.
+
+My goal for this presentation is to convince you to use the command line a
+little bit more than you currently do.
+
+We'll start with the unix philosophy.
