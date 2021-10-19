@@ -96,6 +96,8 @@ navi:  https://github.com/denisidoro/navi
 cheat: https://github.com/cheat/cheat
 
 # references
+View this presentation as a markdown file at: git.io/devcon2021
+
 - [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
 
 
