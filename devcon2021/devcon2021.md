@@ -4,14 +4,33 @@ author: alan morgan
 ---
 
 # who am i?
-```beg-script
-./pres title
-```
-
 alan morgan:
 - software engineer at clearwater analytics.
 - linux user for 10 years.
 - obsessed with the command line.
+
+```beg-script
+./pres title
+```
+
+# the unix philosophy
+> this is the unix philosophy: write programs that do one thing and do it well.
+> write programs to work together. write programs to handle text streams, because
+> that is a universal interface.
+>
+> douglas mcilroy
+
+douglas mcilroy was one of the creators of unix.
+
+internal details don't matter when using pipes.
+
+languages discussion
+https://www.youtube.com/watch?v=xnCgoEyz31M
+
+#
+word processing system for secretaries to type. but you need your
+
+text processing was a theme through the life of unix.
 
 # history of terminal emulators
 - teleprinter/teletype: teletype model 33, creed model 7
@@ -22,31 +41,81 @@ alan morgan:
 ./pres teletype
 ```
 
-# intro to the unix shell
+# the shell
+- v6: shell on version 6 of unix
+- sh: bourne shell
+- bash: gnu bourne-again shell
+- zsh: the friendly interactive shell
+- fish: the z shell
+- nu: a new type of shell
+
+# basic navigation
+- pwd: print working directory
+- cd: change working directory
+- ls: list directory contents
+- find: search for files in a directory
+
+# file manipulation
+- touch: change file timestamps
+- cp: copy files
+- mv: move/rename files
+- rm: remove files
+
+# the unix pipe
+- echo: display text
+- yes: output a string repeatedly until killed
+- cat: concatenate files to standard output
+- head: output the first part of a text stream
+- tail: output the last part of a text stream
+- `|`, `>`, `>>`, `<`, `<<`, `2>`, `&>`...
+
+# filtering
+- grep: print lines that match patterns
+- sort: sort lines of text
+- uniq: print or omit duplicated lines
+- wc: print newline, word, and byte counts for text
+
+wc is not to be confused with "water closet".
+
+```
+(echo hi && yes hello) | head -n 100 | uniq -c | awk '{print $1 " " $2}'
+```
+
+# documentation
+- man: format and display manual pages
+- info: read info documents
+- tldr: display simple help pages for command line tools
+
+# multiplexing
+- screen: terminal multiplexer
+- tmux: newer terminal multiplexer
+- zellij: rust based terminal workspace
+
+similar to gui window managers (bspwm, i3, awesome, sway, amethyst, yabai).
+
+# blah
+tldr -l | tr "'" '"' | jq .[] -r | fzf | xargs tldr
+
+
+
+
 - shell: sh, bash
 - navigation: cd, ls, pwd, find
 - management: rm, mv, cp
 - viewing: cat, head, tail, less
 - filtering: grep
-- ...
 
-# the unix philosophy
-> this is the unix philosophy: write programs that do one thing and do it well.
-> write programs to work together. write programs to handle text streams, because
-> that is a universal interface.
->
-> douglas mcilroy
-
-douglas mcilroy was the the head of bell labs computer science research and
-creator of the unix pipe.
-
-# intro to the modern unix shell
+# unix command line improvements
 - shell: zsh, fish, nu
 - navigation: exa, fd
 - management: rsync
 - viewing: bat
 - filtering: rg, fzf
-- ...
+
+# history of cli editors
+- early editors: ed, ex, vi
+- later editors: vim, nano, emacs
+- newer editors: neovim, spacemacs, doom emacs, kakoune, helix...
 
 # a simplified unix philosophy
 write programs that:
@@ -55,6 +124,9 @@ write programs that:
 
 programs tend to work well with each other if they have only one focus and
 handle text streams.
+
+
+
 
 # programs that do one thing well
 monolithic architecture vs microservice architecture
@@ -100,10 +172,6 @@ what can "Finder" or "Windows Explorer" do?
 - ranger
 - locate, updatedb, grep
 - rg, fzf, fd, exa
-
-# history of cli editors
-- ed, em, en, ex, vi: early unix editors some written for teleprinters
-- vim, neovim, emacs, kakoune, nano: modern editors
 
 # env vars, shell functions, aliases
 
