@@ -1,5 +1,0 @@
-#!/bin/bash
-if [[ $# -eq 0 ]]; then
-    tmux split-window -Zv zsh -ilc 'CACA_DRIVER=ncurses mpv --no-terminal --aid=no -vo caca --loop inf ./title.gif'
-    lookatme --live ./devcon2021.md
-fi

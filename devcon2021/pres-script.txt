@@ -29,7 +29,49 @@ Ok, I agree. Graphical user interfaces are easy, they do look nice, and they
 are useful. But the command line is useful too. It can look nice if you want.
 And it doesn't have to be hard.
 
-My goal for this presentation is to convince you to use the command line a
-little bit more than you currently do.
+My goal for this presentation is to inspire you to use the command line a
+little bit more than you currently do in your daily workflow.
 
-We'll start with the unix philosophy.
+Let's start with shell basics.
+
+What do these all share in common? The unix philosophy.
+
+Douglas McIlroy is one of the people who worked on Unix at Bell Labs. He said
+this about the unix philosophy.
+
+---
+
+Oh, what if the "one thing and do it well"
+
+What if I divided my presentation into parts of the Unix Philosophy?
+
+Write programs that do one thing and do it well:
+- How many times have you had to handle authentication in your program?
+- How many different libraries are there for authentication?
+- Wouldn't it be nice if every program on your computer didn't have its own file -> open menu?
+- What if reading a blog only contained text?
+
+Write programs to work together: (work with robots)
+- Wouldn't it be nice if you didn't have to write everything in one language?
+- Automation likes text streams.
+- Text streams are lower latency.
+
+Write programs to handle text streams: (work with humans
+- man pages
+- help commands
+- good user interfaces
+- Text streams are both human and machine readable.
+
+programs that work well with other programs
+programs that work well with humans
+
+are there frameworks that let computers work well with GUIs? Yes. Are those
+frameworks massively complex? Also yes.
+
+i'm preparing for this presentation and want to ensure what i plan on saying is
+correct. i could just make some selections and execute a command on each one.
+
+| g++ -x c++ -
+in kak: which <cmd> | zsh (shows if things are actually executables or not.)
+
+ps $$ | python3 -c 'import sys; print(sys.stdin.read().split()[-1])' | xargs

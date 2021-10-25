@@ -4,35 +4,96 @@ author: alan morgan
 ---
 
 # who am i?
-alan morgan
-- software engineer at clearwater analytics
-- linux user for 10 years
-- obsessed with the command line
+```beg-script
+./pres title
+```
 
-# the unix philosophy
-> This is the Unix philosophy: Write programs that do one thing and do it well.
-> Write programs to work together. Write programs to handle text streams, because
-> that is a universal interface.
->
-> Douglas McIlroy
-
-# is it commandline, command line, or command-line?
-no one knows
+alan morgan:
+- software engineer at clearwater analytics.
+- linux user for 10 years.
+- obsessed with the command line.
 
 # history of terminal emulators
 - teleprinter/teletype: teletype model 33, creed model 7
-- computer terminals: datapoint 3300, ibm 2250, vt100 adm-3a
-- terminal emulators: xterm, kitty, alacritty, windows terminal
+- computer terminals: datapoint 3300, ibm 2250, vt100, adm-3a
+- terminal emulators: xterm, kitty, alacritty, windows/mac terminal
 
-linux running on a 1930 teletype:
+```end-script
+./pres teletype
+```
 
-https://www.youtube.com/watch?v=2XLZ4Z8LpEE
+# intro to the unix shell
+- shell: sh, bash
+- navigation: cd, ls, pwd, find
+- management: rm, mv, cp
+- viewing: cat, head, tail, less
+- filtering: grep
+- ...
 
-# history of unix shells
-- v6: original shell for unix system written by ken thompson
-- sh: bourne shell replaced v6 as the default unix shell
-- bash: bourne again shell is a rewrite of bourne shell
-- zsh/dash/fish/ksh/nushell... many modern shells
+# the unix philosophy
+> this is the unix philosophy: write programs that do one thing and do it well.
+> write programs to work together. write programs to handle text streams, because
+> that is a universal interface.
+>
+> douglas mcilroy
+
+douglas mcilroy was the the head of bell labs computer science research and
+creator of the unix pipe.
+
+# intro to the modern unix shell
+- shell: zsh, fish, nu
+- navigation: exa, fd
+- management: rsync
+- viewing: bat
+- filtering: rg, fzf
+- ...
+
+# a simplified unix philosophy
+write programs that:
+- do one thing well
+- handle text streams
+
+programs tend to work well with each other if they have only one focus and
+handle text streams.
+
+# programs that do one thing well
+monolithic architecture vs microservice architecture
+why write programs that do one thing well?
+- simplicity
+
+# commandline and webservices
+unix philosophy is like a microservice architecture. theoretically, the entire
+system is composed of simple pieces that work together to achieve something
+complex.
+
+# analogies
+# do one thing well. like online payment systems to paypal.
+# or like other things.
+# a brief introduction of the commandline
+# managing complexity (man page, tldr...)
+# dotfiles
+# history of the commandline
+
+# ---
+i want to do something on the commandline. what should i do first?
+# ---
+
+how about some real world examples?
+
+there
+ be many small and simple pieces that work together to make a system
+work.
+
+some decent examples
+- mv, rm, cat, tee
+- cp -> rsync
+- ls -> exa
+
+# programs that do one thing well
+what can "Finder" or "Windows Explorer" do?
+
+# programs that work well with other programs
+# programs that work well with humans
 
 # browsing the file system
 - cd, ls, pwd, exit, cat
@@ -58,9 +119,7 @@ https://www.youtube.com/watch?v=2XLZ4Z8LpEE
 
 # browsing the web
 - gemini/gopher
-- w3m
-- lynx
-- browsh
+- w3m, lynx, browsh
 
 # social
 - irssi - irc
@@ -82,9 +141,19 @@ https://opensource.com/article/18/12/linux-toy-boxes
 
 what is posi
 
-todo: use this: https://github.com/concise/tmux-keylogger
-
 https://xoc3.io/2021-11-17
+
+in school, i was told to never 
+couldn't tell you who said never do this, but i do remember hearing that.
+it's like saying you can't depend on a webservice, because it's not in the same internet as your webservice.
+```cpp
+#include <iostream>
+
+int main() {
+    std::system("echo 👋🌍");
+    return 0;
+}
+```
 
 # ideas
 - don't be afraid to look in random directories on your computer. you might learn something.
@@ -100,10 +169,8 @@ View this presentation as a markdown file at: [git.io/devcon2021](https://git.io
 
 - [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
 
-
 pass, fzf, fd, rg, ranger, diff-so-fancy, nvim, kak, w3m, lynx, irssi, lam, asciinema
 
 docker run --rm -it browsh/browsh
 
-git.io/devcon2021 ?
-xoc3.io/pres/devcon2021 ?
+git.io/devcon2021
