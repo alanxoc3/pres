@@ -98,6 +98,42 @@ that is a universal interface."
 alright, the history lesson is over, so let's do some things in the command
 line!
 
+in unix, the operating system is a program that both communicates directly with
+hardware and lets you run other programs. the shell is one of those programs
+and it comes with its own language to make it easy to run other programs in an
+interactive environment.
+
+unix had an shell or sh command since version 1. this command was developed by
+ken thompson and was known as the thompson shell. sh was later rewritten by
+stephen bourne and is now knows as the bourne shell. the bourne shell is
+installed on almost every unix based operating system today, including the one
+i'm presenting on, so let's check it out.
+
+i've split my screen with a shell running on the bottom. if i want to run the
+bourne shell, i can type sh.
+
+i'm going to split my screen and let's see what the bourne shell looks like.
+running a shell looks like.
+
+. and developed by ken thompson.
+with version 7, the functionality of the sh command was replaced by stephen
+bourne, hence the bourne shell.
+
+the shell is a program that lets you easily execute other programs.
+without needing to go through system calls
+
+you execute ather. other programs can
+communicate with the operating system by executing system calls. the shell is
+also a program that lets you communicate with the operating system and
+execute other programs.
+
+ you can use system calls
+to communicate with that operating system.
+
+
+you can use system calls to communicate with
+the operating system. the shell is a
+the main program in the commandline is the shell.
 ---
 
 intro & history is under 7 minutes.

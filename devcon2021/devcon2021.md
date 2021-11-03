@@ -14,15 +14,20 @@ alan morgan:
 ```
 
 # terminal emulator history
-- telegraph: 5 needle telegraph, telegraph key, operators
-- typewriters: hansen writing ball, index typewriter, sholes & glidden
-- teleprinter: baudot keyboard, teletype model 33, creed model 7
+- telegraph: morse code, baudot code
+- typewriters: sholes & glidden
+- teleprinter: teletype model 33, creed model 7
 - computer terminals: datapoint 3300, ibm 2250, vt100, adm-3a
 - terminal emulators: kitty, terminator, alacritty, xterm
 
 # command line history
-- multics: abandoned operating system because of complexity
-- unix: much simpler
+- 1964: work on multics begins
+- 1969: work on unix begins
+- 1975: unix v6 is released and distributed outside bell labs
+- 1979: unix v7 is released and distributed outside bell labs
+- 1991: work on linux begins
+- 1999: mac os x is now unix based
+- 2016: windows subsystem for linux is in beta
 
 > this is the unix philosophy: write programs that do one thing and do it well.
 > write programs to work together. write programs to handle text streams, because
@@ -31,8 +36,7 @@ alan morgan:
 > -- douglas mcilroy
 
 # the shell
-- v6: shell on version 6 of unix
-- sh: bourne shell
+- sh: thompson shell then later bourne shell
 - bash: gnu bourne-again shell
 - zsh: the z shell
 - fish: the friendly interactive shell
