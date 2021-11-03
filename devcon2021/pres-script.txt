@@ -39,10 +39,9 @@ lucky, nothing will go wrong. so let's get started.
 the terminal emulator has a pretty neat history and actually starts with the
 invention of the electric telegraph. for the telegraph to work, you need a
 sender and receiver, a wire between the two, and some sort of binary encoding
-to send signals to the other person. for a time, the most popular encoding was
-"morse code". the sender used a telegraph key, like an on/off switch, to send
-morse code to the receiver, and the receiver could read lines on a piece of
-paper and translate that from morse code to their native language.
+to send signals to the other person. in many early implementations of the
+telegraph, both the sender and receiver will memorize that binary encoding to
+communicate with each other.
 
 alongside the growing popularity of the telegraph, various forms of typewriters
 were invented, the most notable one being the sholes and glidden typewriter.
@@ -57,26 +56,20 @@ message, verify he typed the correct thing on his piece of paper, and press
 send. the receiver can then watch his teleprinter type out the message the
 sender sent and reply to that message if he wants.
 
-also, as we make this transition, we'll have teleprinters use the baudot code
-instead of morse code, because this new code sounds cooler and it has a fixed
-size of 5 bits per character which is much easier to work with than a variable
-size of bits per character. The baudot code was actually the precursor to ascii
-which required 7 bits and unicode which now requires at least 8 bits per
-character.
+later on, computers started to get popular around the 1950s. now that we have
+these computers, instead of using a teleprinter to communicate with another
+person, what if you used a teleprinter to communicate with a computer? again,
+that's exactly what happened, though not until interactive computer use was
+more cost efficient with the development of time sharing.
 
-later on, computers started to get popular in the mid 20th century. now that we
-have these computers, instead of using a teleprinter to communicate with
-another person, what if you used a teleprinter to communicate with a computer?
-that's exactly what happened once interactive computer use was more feasable
-with time sharing.
-
-quickly after the timesharing rage, computer terminals were created, this was
-nicer than teleprinters, because output is now instant, it's not as loud as a
-teleprinter, you can modify characters anywhere on the screen, and you make the
-world greener by using less paper.
+quickly after computer integration with teleprinters started to gain
+popularity, computer terminals were created and had a bunch of nice features
+over teleprinters including, not being loud, displaying characters instantly,
+being able to modify characters anywhere on a screen, and of course these
+computer terminals made the world greener by using less paper.
 
 finally in our world of 4k monitors, we run programs called "terminal
-emulators" to imitate these "computer terminals". windows, mac, and linux all
+emulators" to imitate these earlier "computer terminals". windows, mac, and linux all
 have default terminal emulators. kitty, terminator, alacritty, and xterm are a
 few of the many others.
 
@@ -102,27 +95,12 @@ said,
 write programs to work together. write programs to handle text streams, because
 that is a universal interface."
 
-alright, the history lesson is over, so let's start doing things in the command
+alright, the history lesson is over, so let's do some things in the command
 line!
 
---
-
-
-
-
-
-
-
-
-Before we get into any more details.
-Let's start with shell basics.
-
-What do these all share in common? The unix philosophy.
-
-Douglas McIlroy is one of the people who worked on Unix at Bell Labs. He said
-this about the unix philosophy.
-
 ---
+
+intro & history is under 7 minutes.
 
 Oh, what if the "one thing and do it well"
 

@@ -20,7 +20,10 @@ alan morgan:
 - computer terminals: datapoint 3300, ibm 2250, vt100, adm-3a
 - terminal emulators: kitty, terminator, alacritty, xterm
 
-# bell labs
+# command line history
+- multics: abandoned operating system because of complexity
+- unix: much simpler
+
 > this is the unix philosophy: write programs that do one thing and do it well.
 > write programs to work together. write programs to handle text streams, because
 > that is a universal interface.
