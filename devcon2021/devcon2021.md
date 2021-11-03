@@ -41,6 +41,8 @@ alan morgan:
 - zsh: the z shell
 - fish: the friendly interactive shell
 - nu: a new type of shell
+- exit: leave a shell or ctrl-d
+- clear: clear the screen or ctrl-l
 
 # basic navigation
 - pwd: print working directory
@@ -59,10 +61,7 @@ alan morgan:
 - echo: display text
 - `>`: redirect stdout to a file
 - cat: concatenate files to standard output
-- `<`: redirect file contents to stdin
 - `|`: redirect stdout to stdin for another command
-- `$()`: redirect stdout to be a commandline argument
-- yes: output a string repeatedly until killed
 - head: output the first part of a text stream
 - tail: output the last part of a text stream
 

@@ -98,42 +98,69 @@ that is a universal interface."
 alright, the history lesson is over, so let's do some things in the command
 line!
 
-in unix, the operating system is a program that both communicates directly with
-hardware and lets you run other programs. the shell is one of those programs
-and it comes with its own language to make it easy to run other programs in an
-interactive environment.
-
-unix had an shell or sh command since version 1. this command was developed by
-ken thompson and was known as the thompson shell. sh was later rewritten by
-stephen bourne and is now knows as the bourne shell. the bourne shell is
+in unix, the shell is a program that makes it easy to run other programs
+interactively. unix has had a shell or sh command a since version 1. it was
+originally known as the "thompson shell", but later rewritten by stephen bourne
+in version 7 and is now known as the bourne shell. the bourne shell is
 installed on almost every unix based operating system today, including the one
 i'm presenting on, so let's check it out.
 
-i've split my screen with a shell running on the bottom. if i want to run the
-bourne shell, i can type sh.
+i've split my screen with a shell running at the bottom. if i want to run the
+bourne shell, i can type sh. the bash shell was an attempt to rewrite and
+improve the bourne shell. and there are many other shells out there you can
+install. zsh is the shell I use, it's the first one you saw and the default on
+my system. fish is a popular one i installed
+for this presentation, and nu is a new one i heard of recently, but haven't
+tried. you can leave most shells by using the built in "exit" command or by
+sending the end of file character with ctrl-d. you can usually clear the screen
+with the "clear" command or ctrl-l.
 
-i'm going to split my screen and let's see what the bourne shell looks like.
-running a shell looks like.
+when you use the shell, you are always located within a directory. to see
+which directory that is, type pwd or print working directory. to change your
+directory, you can type cd followed by the directory name. and pwd to make sure
+that worked. cd usually has some nice shortcuts. for example, if you want to go
+to the previous directory you were at, try cd followed by a dash.
 
-. and developed by ken thompson.
-with version 7, the functionality of the sh command was replaced by stephen
-bourne, hence the bourne shell.
+we can view the files in a directory with "ls". "cd .." will take us up a
+directory. we can use the "find" command to list all the files in this
+directory recursively. you can see that it printed out a bunch of stuff. a lot
+of these files are from the hidden git directory. the "fd" command is a modern
+replacement to the find command that you can install. fd by default does not show
+hidden files and it gives us nice colors.
 
-the shell is a program that lets you easily execute other programs.
-without needing to go through system calls
+just like you can touch your computer screen, you can touch files too with the
+touch command. this causes the last edit timestamp of that file to update. ls
+-l will show those timestamps. if i touch a file and run ls -l again, you can
+see that the timestamp has been updated. touch has a nice side effect of
+creating an empty file if the file does not exist.
 
-you execute ather. other programs can
-communicate with the operating system by executing system calls. the shell is
-also a program that lets you communicate with the operating system and
-execute other programs.
+use cp to copy files. use mv to rename files. or move them. and you can delete
+files with rm.
 
- you can use system calls
-to communicate with that operating system.
+next up, "echo", which just prints what you tell it to. we can redirect this to
+a file and see that there is no output. but there is now a file named says. cat
+can be used to print the contents of a file. cat says, enter, "meow". cat actually
+stands for concatenate, so if you pass multiple files to it, it will print both
+those files out. cat says what, meow me-ow.
 
+```
+echo testing
+echo meow > says
+echo me-ow > what
+```
 
-you can use system calls to communicate with
-the operating system. the shell is a
-the main program in the commandline is the shell.
+the pipe operator can be used to pass the output of one program to the input of
+another. if i type echo hello, it prints hello. if i pipe that to cat, it still
+prints hello, so that's not very interesting.
+
+but if i type fd to show all the files, then pass the output to head and ask
+for only the first two lines, it shows me only the first two lines. i can do
+the same thing with tail and only show the last two lines.
+
+the yes command prints the same thing infinitely until you stop it with ctrl-c.
+if i pipe the output of this command to cat, it still does the same thing, so
+it's still
+
 ---
 
 intro & history is under 7 minutes.
