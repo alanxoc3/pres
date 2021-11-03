@@ -1,8 +1,15 @@
-Alright it looks like it's time to get started, so let's do this.
+Alright, thanks x.
 
-Now this presentation will be a little bit different than what you may be used
-to, because everything you see on this screen for the next 45 minutes, or so,
-will be completely contained within a terminal emulator.
+As x mentioned, I'm alan. I'm a Software Engineer here at Clearwater Analytics.
+I've been using Linux for about 10 years now. And I'm obsessed with the command
+line.
+
+Whether you consider yourself a commandline expert or novice, my goal is inspire you to
+use the commandline a little more than you currently do in your daily workflow.
+
+Now this presentation will be a little different than what you may be used
+to, because everything you see on this screen for the next 40 minutes, or so,
+will be completely contained within a terminal interface.
 
 And when I say everything, I mean everything.
 
@@ -10,28 +17,47 @@ And when I say everything, I mean everything.
 
 the command line
 
-What you see here is probably the coolest part of this presentation, so I'll
-let you enjoy it for a moment.
+What you see here is probably the coolest part of the presentation, so i'll
+let you soak it in for a minute. i actually have a keylogger running at the
+bottom right of the screen, if you feel lost, i hope that helps, and i'll try
+not to type any sensitive passwords for you.
 
-And that moment is now over, sorry.
+the terminal emulator i'm using is called alacritty, the bottom bar you see is from
+me running tmux locally, the top bar is from me running tmux remotely through ssh on
+an arch linux machine. and the powerpoint-like presentation software i'm using
+is called lookatme.
 
-Who am I?
+now that i got that out of the way, let's continue by talking about the "unix
+philosophy".
 
-My name is Alan Morgan. I'm a Software Engineer here at Clearwater Analytics.
-I've been using Linux for about 10 years now. And I'm obsessed with the command
-line.
+There are many definitions of the "Unix Philosophy", the one i like most is
+attributed to Douglas McIlroy he was the creator of the unix pipe and one of
+the founding architects of unix at Bell Labs in the 1970s. he said.
 
-I know what you're thinking. The command line? Come on Alan. We live in the
-21st century. People use graphical user interfaces now. They're easy, they
-look nice, and they're very useful.
+"this is the unix philosophy: write programs that do one thing and do it well.
+write programs to work together. write programs to handle text streams, because
+that is a universal interface."
 
-Ok, I agree. Graphical user interfaces are easy, they do look nice, and they
-are useful. But the command line is useful too. It can look nice if you want.
-And it doesn't have to be hard.
+i really like the guiding principles of the unix philosophy. in my opinion,
+this is what has made the commandline so powerful, scriptable, and overall just
+fun to use.
 
-My goal for this presentation is to inspire you to use the command line a
-little bit more than you currently do in your daily workflow.
+keep that in the back of you mind. from here i'll go over some of the history
+of the command line, then you can watch me run a bunch of random commands. if
+we're lucky, nothing will go wrong.
 
+
+
+--
+
+
+
+
+
+
+
+
+Before we get into any more details.
 Let's start with shell basics.
 
 What do these all share in common? The unix philosophy.

@@ -9,40 +9,24 @@ alan morgan:
 - linux user for 10 years.
 - obsessed with the command line.
 
-```beg-script
-./pres title
-```
-
 # the unix philosophy
 > this is the unix philosophy: write programs that do one thing and do it well.
 > write programs to work together. write programs to handle text streams, because
 > that is a universal interface.
 >
-> douglas mcilroy
+> -- douglas mcilroy
 
-douglas mcilroy was one of the creators of unix.
+```beg-script
+./pres title
+```
 
-internal details don't matter when using pipes.
-
-languages discussion
-https://www.youtube.com/watch?v=xnCgoEyz31M
-
-word processing system for secretaries to type. but you need your
-
-text processing was a theme through the life of unix.
-
-unix philosophy is like a microservice architecture. theoretically, the entire
-system is composed of simple pieces that work together to achieve something
-complex.
-
-# history of terminal emulators
-- teleprinter/teletype: teletype model 33, creed model 7
+# command line history
+- telegraph: 5 needle telegraph, telegraph key, operators
+- typewriters: hansen writing ball, index typewriter, sholes & glidden
+- keypunch: ibm 024, ibm verifier, ibm sorting machine
+- teleprinter: baudot keyboard, teletype model 33, creed model 7
 - computer terminals: datapoint 3300, ibm 2250, vt100, adm-3a
 - terminal emulators: xterm, kitty, alacritty, windows/mac terminal
-
-```end-script
-./pres teletype
-```
 
 # the shell
 - v6: shell on version 6 of unix
@@ -67,11 +51,14 @@ complex.
 
 # the unix pipe
 - echo: display text
-- yes: output a string repeatedly until killed
+- `>`: redirect stdout to a file
 - cat: concatenate files to standard output
+- `<`: redirect file contents to stdin
+- `|`: redirect stdout to stdin for another command
+- `$()`: redirect stdout to be a commandline argument
+- yes: output a string repeatedly until killed
 - head: output the first part of a text stream
 - tail: output the last part of a text stream
-- `>`, `<`, `|`, `$()`, `2>`, `&>`...
 
 # filtering, sorting, & aggregating
 - grep: print lines that match patterns
@@ -102,7 +89,6 @@ $(echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf)
 - nvim: modern version of vim
 - kak: a spinoff of vim
 - helix: a spinoff of kak written in rust
-   
 - nano: easy to use editor
 - emacs: a very extensible editor
 - spacemacs & doom emacs: vim friendly extensions to emacs
@@ -158,6 +144,8 @@ View this presentation as a markdown file at: [git.io/devcon2021](https://git.io
 
 - [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
 - [Language Discussion](https://www.youtube.com/watch?v=xnCgoEyz31M)
+- [Baudot Code](https://en.wikipedia.org/wiki/Baudot_code)
+- [Punch Card Programming](https://www.youtube.com/watch?v=KG2M4ttzBnY)
 - [Command Line History](https://en.wikipedia.org/wiki/Command-line_interface#History)
 - [Silly Command Line Tools](https://opensource.com/article/18/12/linux-toy-boxes)
 
