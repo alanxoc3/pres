@@ -9,24 +9,23 @@ alan morgan:
 - linux user for 10 years.
 - obsessed with the command line.
 
-# the unix philosophy
+```end-script
+./pres title
+```
+
+# terminal emulator history
+- telegraph: 5 needle telegraph, telegraph key, operators
+- typewriters: hansen writing ball, index typewriter, sholes & glidden
+- teleprinter: baudot keyboard, teletype model 33, creed model 7
+- computer terminals: datapoint 3300, ibm 2250, vt100, adm-3a
+- terminal emulators: kitty, terminator, alacritty, xterm
+
+# bell labs
 > this is the unix philosophy: write programs that do one thing and do it well.
 > write programs to work together. write programs to handle text streams, because
 > that is a universal interface.
 >
 > -- douglas mcilroy
-
-```beg-script
-./pres title
-```
-
-# command line history
-- telegraph: 5 needle telegraph, telegraph key, operators
-- typewriters: hansen writing ball, index typewriter, sholes & glidden
-- keypunch: ibm 024, ibm verifier, ibm sorting machine
-- teleprinter: baudot keyboard, teletype model 33, creed model 7
-- computer terminals: datapoint 3300, ibm 2250, vt100, adm-3a
-- terminal emulators: xterm, kitty, alacritty, windows/mac terminal
 
 # the shell
 - v6: shell on version 6 of unix

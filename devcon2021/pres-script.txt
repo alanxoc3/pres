@@ -4,12 +4,9 @@ As x mentioned, I'm alan. I'm a Software Engineer here at Clearwater Analytics.
 I've been using Linux for about 10 years now. And I'm obsessed with the command
 line.
 
-Whether you consider yourself a commandline expert or novice, my goal is inspire you to
-use the commandline a little more than you currently do in your daily workflow.
-
-Now this presentation will be a little different than what you may be used
-to, because everything you see on this screen for the next 40 minutes, or so,
-will be completely contained within a terminal interface.
+Now this presentation will be a little different than what you may be used to,
+because everything you see on this screen will be completely contained within
+a terminal emulator.
 
 And when I say everything, I mean everything.
 
@@ -18,35 +15,95 @@ And when I say everything, I mean everything.
 the command line
 
 What you see here is probably the coolest part of the presentation, so i'll
-let you soak it in for a minute. i actually have a keylogger running at the
-bottom right of the screen, if you feel lost, i hope that helps, and i'll try
-not to type any sensitive passwords for you.
+let you soak it in for a minute while i briefly explain my setup.
 
-the terminal emulator i'm using is called alacritty, the bottom bar you see is from
-me running tmux locally, the top bar is from me running tmux remotely through ssh on
-an arch linux machine. and the powerpoint-like presentation software i'm using
-is called lookatme.
+the terminal emulator i'm using is called alacritty, the bottom bar you see is
+from me running tmux locally on my laptop. the top bar is from me running tmux
+remotely through ssh on an arch linux machine. and the powerpoint-like
+presentation software i'm using is called lookatme.
 
-now that i got that out of the way, let's continue by talking about the "unix
-philosophy".
+i'm going to cover a lot of content in the next 40 minutes. if you feel lost,
+we'll have a few questions at the end, you can rewatch this online, and i also
+have a keylogger running at the bottom right of the screen so i'll try not to
+type any sensitive passwords for you.
 
-There are many definitions of the "Unix Philosophy", the one i like most is
-attributed to Douglas McIlroy he was the creator of the unix pipe and one of
-the founding architects of unix at Bell Labs in the 1970s. he said.
+by the end of this presentation i hope you feel motivated to use the
+commandline a bit more than you currently do as part of your daily workflow.
+
+from here i'll go over some of the history of the terminal emulator and the
+command line, then you can watch me run a bunch of random commands. if we're
+lucky, nothing will go wrong. so let's get started.
+
+<history of terminal emulator>
+
+the terminal emulator has a pretty neat history and actually starts with the
+invention of the electric telegraph. for the telegraph to work, you need a
+sender and receiver, a wire between the two, and some sort of binary encoding
+to send signals to the other person. for a time, the most popular encoding was
+"morse code". the sender used a telegraph key, like an on/off switch, to send
+morse code to the receiver, and the receiver could read lines on a piece of
+paper and translate that from morse code to their native language.
+
+alongside the growing popularity of the telegraph, various forms of typewriters
+were invented, the most notable one being the sholes and glidden typewriter.
+this typewriter was the first typewriter to use the qwerty layout and because
+it was a commercial success, most people use the qwerty layout today.
+
+now that these two great innovations exist in the late 1800s or early 1900s,
+people started thinking, "hey, what if we combine the electric telegraph with
+the typewriter", and that's exactly what happened. we can give the sender and
+receiver typewriter-like devices called teleprinters. the sender can type out a
+message, verify he typed the correct thing on his piece of paper, and press
+send. the receiver can then watch his teleprinter type out the message the
+sender sent and reply to that message if he wants.
+
+also, as we make this transition, we'll have teleprinters use the baudot code
+instead of morse code, because this new code sounds cooler and it has a fixed
+size of 5 bits per character which is much easier to work with than a variable
+size of bits per character. The baudot code was actually the precursor to ascii
+which required 7 bits and unicode which now requires at least 8 bits per
+character.
+
+later on, computers started to get popular in the mid 20th century. now that we
+have these computers, instead of using a teleprinter to communicate with
+another person, what if you used a teleprinter to communicate with a computer?
+that's exactly what happened once interactive computer use was more feasable
+with time sharing.
+
+quickly after the timesharing rage, computer terminals were created, this was
+nicer than teleprinters, because output is now instant, it's not as loud as a
+teleprinter, you can modify characters anywhere on the screen, and you make the
+world greener by using less paper.
+
+finally in our world of 4k monitors, we run programs called "terminal
+emulators" to imitate these "computer terminals". windows, mac, and linux all
+have default terminal emulators. kitty, terminator, alacritty, and xterm are a
+few of the many others.
+
+<history of command line>
+
+when i mention "the command line", i am specifically referring to the unix
+command line. i don't know anything about powershell, so don't ask me. the
+history of the unix command line is heavily tied to the history of the unix
+operating system. the story of unix starts in the 1960s and 70s with a group of researchers
+at bell labs who were working on an operating system called multics. they became
+frustrated with the complexity of multics, so they abandoned that project to
+work on something smaller, which later became unix. unix began to be
+distributed to universities throughout the 70s and 80s. macos and linux later
+built off unix in the 90s. and the rest is history.
+
+one of the reasons unix and the commandline have been so successful is because
+of the unix philosophy. There are many definitions of the "Unix Philosophy",
+the one i like most is attributed to Douglas McIlroy he was the creator of the
+unix pipe and one of those researchers at bell labs in the 60s and 70s. he
+said,
 
 "this is the unix philosophy: write programs that do one thing and do it well.
 write programs to work together. write programs to handle text streams, because
 that is a universal interface."
 
-i really like the guiding principles of the unix philosophy. in my opinion,
-this is what has made the commandline so powerful, scriptable, and overall just
-fun to use.
-
-keep that in the back of you mind. from here i'll go over some of the history
-of the command line, then you can watch me run a bunch of random commands. if
-we're lucky, nothing will go wrong.
-
-
+alright, the history lesson is over, so let's start doing things in the command
+line!
 
 --
 
