@@ -10,8 +10,6 @@ a terminal emulator.
 
 And when I say everything, I mean everything.
 
-<title>
-
 the command line
 
 What you see here is probably the coolest part of the presentation, so i'll
@@ -34,8 +32,6 @@ from here i'll go over some of the history of the terminal emulator and the
 command line, then you can watch me run a bunch of random commands. if we're
 lucky, nothing will go wrong. so let's get started.
 
-<history of terminal emulator>
-
 the terminal emulator has a pretty neat history, and it kind starts with
 teleprinters. teleprinters were these typewriter like devices in the early
 1900s that were connected to the telegraph system. as you type a message, it
@@ -57,8 +53,6 @@ emulators" to imitate these earlier "computer terminals". windows, mac, and
 linux all have default terminal emulators. kitty, terminator, alacritty, and
 xterm are a few of the many others.
 
-<history of command line>
-
 the history of the commandline is really just the history of the unix operating
 system. the story of unix takes place in the 1960s and 70s with a group of
 researchers at bell labs who were working on an operating system called
@@ -76,129 +70,3 @@ said,
 "this is the unix philosophy: write programs that do one thing and do it well.
 write programs to work together. write programs to handle text streams, because
 that is a universal interface."
-
----
-
-in unix, the shell is a program that makes it easy to run other programs
-interactively. the default shell for unix is called the bourne shell. this
-shell is on almost every unix based operating system including this one, so
-let's check it out.
-
-i've split my screen and will be running commands at the bottom. if i want to
-run the bourne shell, i can type sh. the bash shell attempts to improve the
-bourne shell. zsh and fish both attempt to improve bash. and there are many
-other shells out there that you can try. i personally use zsh and that is the
-shell i will be using throughout this presentation.
-
-you can leave most shells by using the built in "exit" command or by sending
-the end of file character with ctrl-d. you can usually clear the screen with
-the "clear" command or ctrl-l.
-
-when you use the shell, you are always located within a directory. to see
-which directory that is, type pwd or print working directory. to change your
-directory, you can type cd followed by the directory name. and pwd to make sure
-that worked. cd usually has some nice shortcuts. for example, if you want to go
-to the previous directory you were at, try cd followed by a dash.
-
-we can view the files in a directory with "ls". "cd .." will take us up a
-directory. we can use the "find" command to list all the files in this
-directory recursively. you can see that it printed out a bunch of stuff. a lot
-of these files are from the hidden git directory. the "fd" command is a modern
-replacement to find that you may want to install. fd by default does not show
-hidden files and it gives us nice colors.
-
-just like you can touch things in real life, you can touch files in the
-commandline with the touch command. this causes the edit timestamp of a file to
-update. ls -l will show those timestamps. touch star will touch everything in
-this directory. if i run ls -l again, you can see that all the timestamp are
-now different. touch has a nice side effect of creating an empty file if the
-file does not exist.
-
-to copy files, use cp. use mv to rename files. or move them. you can delete
-files with rm. and delete empty directories with rmdir.
-
-if you want to view the contents of a file as plain text, use
-the cat command. bat is a neat utility you can install that imitates cat, but
-also provides syntax highlighting for a bunch of file types.
-
-next up, "echo", which just prints what you tell it to. we can redirect the
-output to a file with the greater than sign. you can see there is no output,
-but there is now a file named says. cat can be used to print the contents of a
-file. cat actually stands for concatenate, so if you give it two filenames, it
-will print out both files.
-
-```
-echo testing
-echo meow > says
-echo me-ow > what
-```
-
-the pipe operator can be used to pass the output of one program to the input of
-another. if i type echo hello, then pipe that to cat, it still prints hello, so
-that's not very interesting.
-
-if i type fd, and pipe that to head, specifing to only read the first 2 lines. it
-works. i can do the same thing with tail to get the last two lines.
-
----
-
-intro & history is under 7 minutes.
-
-Oh, what if the "one thing and do it well"
-
-What if I divided my presentation into parts of the Unix Philosophy?
-
-Write programs that do one thing and do it well:
-- How many times have you had to handle authentication in your program?
-- How many different libraries are there for authentication?
-- Wouldn't it be nice if every program on your computer didn't have its own file -> open menu?
-- What if reading a blog only contained text?
-
-Write programs to work together: (work with robots)
-- Wouldn't it be nice if you didn't have to write everything in one language?
-- Automation likes text streams.
-- Text streams are lower latency.
-
-Write programs to handle text streams: (work with humans
-- man pages
-- help commands
-- good user interfaces
-- Text streams are both human and machine readable.
-
-programs that work well with other programs
-programs that work well with humans
-
-are there frameworks that let computers work well with GUIs? Yes. Are those
-frameworks massively complex? Also yes.
-
-i'm preparing for this presentation and want to ensure what i plan on saying is
-correct. i could just make some selections and execute a command on each one.
-
-| g++ -x c++ -
-in kak: which <cmd> | zsh (shows if things are actually executables or not.)
-
-termdown mention
-
-```
-cat LICENSE
-| tr ' ' '\n' 
-| sed -E 's/\W//g'
-| sort 
-| python -c 'import sys; print(sys.stdin.read().strip().lower())' 
-| uniq -c 
-| sort -n
-| tail -n 1
-| awk '{print $2;}'
-| python -c 'import sys; print(sys.stdin.read().split()[-1])'
-```
-
-cat LICENSE
-| sed -E 's/ /\n/g'
-| sed -E 's/\W//g'
-| grep -vE '^$'
-| awk '{print tolower($0);}'
-| sort
-| uniq -c
-| sort -n
-| tail -n 1
-| awk '{print $2;}'

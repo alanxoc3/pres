@@ -41,6 +41,14 @@ alan morgan:
 - exit: leave a shell or ctrl-d
 - clear: clear the screen or ctrl-l or reset
 
+# multiplexing
+similar to gui-based tiling window managers (bspwm, i3, awesome, sway, amethyst, yabai).
+
+- screen: terminal multiplexer
+- tmux: newer terminal multiplexer
+
+other multiplexers/frameworks: byobu, zelij
+
 # basic navigation
 - pwd: print working directory
 - cd: change working directory
@@ -51,13 +59,14 @@ alan morgan:
 - mkdir: create a directory
 - touch: change file timestamps
 - cp: copy files
-- mv: move/rename files
+- mv: rename/move files
 - rm: remove files
 - rmdir: remove a directory
 
 # files & executables
 - cat: concatenate files to standard output
 - file: determine file type
+- g++: c compiler
 - chmod: change file access permissions
 - which: locate program in path
 
@@ -67,7 +76,6 @@ alan morgan:
 - $PWD: current working directory
 - $HOME: current user's home directory
 - $PATH: directories where to look for executables
-- env: list all env vars
 
 # the unix pipe
 - `>`: redirect stdout to a file
@@ -77,11 +85,26 @@ alan morgan:
 - less: interface to view long output
 - wc: print newline, word, and byte counts for text
 
-# unix pipe example
-try to print the word that is most common in a file
+# unix pipe exercise
+try to print the word that is most common in a file:
 
 ```sh
 cat LICENSE | ...
+```
+
+# unix pipe solution
+here is one solution to print the most common word in a file:
+
+```sh
+cat LICENSE
+| tr ' ' '\n'
+| sed -E 's/\W//g'
+| awk '/.+/ {print tolower($0);}'
+| sort
+| uniq -c
+| sort -n
+| tail -n 1
+| awk '{print $2;}'
 ```
 
 # cli editors
@@ -91,69 +114,54 @@ cat LICENSE | ...
 - nano: easy to use editor
 - emacs: a very extensible editor
 
+# modern editors
+- nvim: modern version of vim
+- kak: a spinoff of vim
+- spacemacs & doom emacs: vim friendly extensions to emacs
+
 # documentation
+- dotfiles: a place to manage your configuration & notes
+- alias: create an alias of a complex command
+- `--help`: common option on commands
 - man: format and display manual pages
 - info: read info documents
-- `--help`: common option on commands
-
-# multiplexing
-- screen: terminal multiplexer
-- tmux: newer terminal multiplexer
-- byobu: screen & tmux defaults
-- zellij: rust based terminal workspace
-
-similar to gui-based tiling window managers (bspwm, i3, awesome, sway, amethyst, yabai).
+- tldr: documentation before a man page
 
 # modern tooling upgrades
 - rg: grep clone but faster
 - fd: find clone with better interface
 - exa: ls clone with knowledge of git
 - bat: cat clone with syntax hilighting
-- tldr: documentation before a man page
 
-# modern editors
-- nvim: modern version of vim
-- kak: a spinoff of vim
-- spacemacs & doom emacs: vim friendly extensions to emacs
-
-# fuzzy finding
+# TODO: fuzzy finding
 - fzf: commandline fuzzy finder
 
-# fzf examples
 fuzzy find all tldr tldr help snippets
 ```sh
-tldr -l
-| tr "'" '"'
-| jq .[] -r
-| fzf
-| xargs tldr
+tldr -l | tr "'" '"' | jq .[] -r | fzf | xargs tldr
 ```
 
-# fzf path
 fuzzy find all executables in your path
 ```sh
-$(echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf)
+echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf
 ```
 
-# more topics that i won't get into
-- docker, hugo, nmap, socat, group management, ...
-- don't be afraid to look in random directories on your computer. you might learn something.
-- must have: fzf! show example usage for fzf.
-- pass, fzf, fd, rg, ranger, diff-so-fancy, nvim, kak, w3m, lynx, irssi, lam, asciinema
-- docker run --rm -it browsh/browsh
-- gemini/gopher
-- w3m, lynx, browsh
-- irssi - irc
-- himalaya/mutt - email
+# 😟 many commands i don't have time for
+- wget, curl, nmap, socat
+- pass, ranger, diff-so-fancy
+- browsh, w3m, lynx, amfora
+- lookatme, asciinema
+- irssi, ii
+- mutt, himalaya
+- and many more...
 
 # references
 View this presentation as a markdown file at: [git.io/devcon2021](https://git.io/devcon2021)
 
+Some possibly related links:
 - [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
 - [Language Discussion](https://www.youtube.com/watch?v=xnCgoEyz31M)
 - [Baudot Code](https://en.wikipedia.org/wiki/Baudot_code)
 - [Punch Card Programming](https://www.youtube.com/watch?v=KG2M4ttzBnY)
 - [Command Line History](https://en.wikipedia.org/wiki/Command-line_interface#History)
 - [Silly Command Line Tools](https://opensource.com/article/18/12/linux-toy-boxes)
-
-https://xoc3.io/2021-11-17
