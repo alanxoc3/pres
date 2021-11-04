@@ -147,7 +147,7 @@ echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf
 ```
 
 # 😟 many commands i don't have time for
-- wget, curl, nmap, socat
+- mpv, wget, curl, nmap, socat
 - pass, ranger, diff-so-fancy
 - browsh, w3m, lynx, amfora
 - lookatme, asciinema
