@@ -1,5 +1,7 @@
-# Alan Morgan's Presentations
+# alan morgan's presentations
+
+a repo for my presentations
 
 ```
-devcon2021/ - My presentation at Clearwater Analytics' Annual Developer Conference
+devcon2021/ - my presentation at clearwater analytics' annual developer conference
 ```

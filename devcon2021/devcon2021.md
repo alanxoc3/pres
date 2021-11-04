@@ -23,11 +23,9 @@ alan morgan:
 # command line history
 - 1964: work on multics begins
 - 1969: work on unix begins
-- 1975: unix v6 is released and distributed outside bell labs
-- 1979: unix v7 is released and distributed outside bell labs
+- 1975: unix is distributed outside bell labs
 - 1991: work on linux begins
-- 1999: mac os x is now unix based
-- 2016: windows subsystem for linux is in beta
+- 1999: mac os is now unix based
 
 > this is the unix philosophy: write programs that do one thing and do it well.
 > write programs to work together. write programs to handle text streams, because
@@ -36,67 +34,67 @@ alan morgan:
 > -- douglas mcilroy
 
 # the shell
-- sh: thompson shell then later bourne shell
+- sh: bourne shell
 - bash: gnu bourne-again shell
 - zsh: the z shell
 - fish: the friendly interactive shell
-- nu: a new type of shell
 - exit: leave a shell or ctrl-d
-- clear: clear the screen or ctrl-l
+- clear: clear the screen or ctrl-l or reset
 
 # basic navigation
 - pwd: print working directory
 - cd: change working directory
 - ls: list directory contents
 - find: search for files in a directory
-- fd: modern alternative to find
 
 # file manipulation
+- mkdir: create a directory
 - touch: change file timestamps
 - cp: copy files
 - mv: move/rename files
 - rm: remove files
+- rmdir: remove a directory
+
+# files & executables
+- cat: concatenate files to standard output
+- file: determine file type
+- chmod: change file access permissions
+- which: locate program in path
+
+# env variables
+- echo: print something
+- $USER: current user
+- $PWD: current working directory
+- $HOME: current user's home directory
+- $PATH: directories where to look for executables
+- env: list all env vars
 
 # the unix pipe
-- echo: display text
 - `>`: redirect stdout to a file
-- cat: concatenate files to standard output
 - `|`: redirect stdout to stdin for another command
 - head: output the first part of a text stream
 - tail: output the last part of a text stream
-
-# filtering, sorting, & aggregating
-- grep: print lines that match patterns
-- rg: modern alternative to grep
-- sort: sort lines of text
-- uniq: print or omit duplicated lines
+- less: interface to view long output
 - wc: print newline, word, and byte counts for text
-- fzf: commandline fuzzy finder
 
-```
-(echo hi && yes hello) | head -n 10 | uniq -c | awk '{print $1 " " $2}'
-```
+# unix pipe example
+try to print the word that is most common in a file
 
-# executables
-- chmod: change file access permissions
-- file: determine file type
-- which: locate program in path
-- `$PATH`, `#!/bin/bash`, `#!/bin/python3`, `#!/bin/perl`...
-
-```
-$(echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf)
+```sh
+cat LICENSE | ...
 ```
 
 # cli editors
 - ed: line oriented text editor
 - ex & vi: full screen text editor
 - vim: vi improved
-- nvim: modern version of vim
-- kak: a spinoff of vim
-- helix: a spinoff of kak written in rust
 - nano: easy to use editor
 - emacs: a very extensible editor
-- spacemacs & doom emacs: vim friendly extensions to emacs
+
+# documentation
+- man: format and display manual pages
+- info: read info documents
+- `--help`: common option on commands
 
 # multiplexing
 - screen: terminal multiplexer
@@ -106,31 +104,35 @@ $(echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf)
 
 similar to gui-based tiling window managers (bspwm, i3, awesome, sway, amethyst, yabai).
 
-# documentation
-- man: format and display manual pages
-- info: read info documents
-- tldr: display simple help pages
-- navi: interactive cheat sheet tool
-- cheat: minimalistic cheat sheets
+# modern tooling upgrades
+- rg: grep clone but faster
+- fd: find clone with better interface
+- exa: ls clone with knowledge of git
+- bat: cat clone with syntax hilighting
+- tldr: documentation before a man page
 
-# fun exercises
+# modern editors
+- nvim: modern version of vim
+- kak: a spinoff of vim
+- spacemacs & doom emacs: vim friendly extensions to emacs
+
+# fuzzy finding
+- fzf: commandline fuzzy finder
+
+# fzf examples
+fuzzy find all tldr tldr help snippets
 ```sh
-tldr -l | tr "'" '"' | jq .[] -r | fzf | xargs tldr
+tldr -l
+| tr "'" '"'
+| jq .[] -r
+| fzf
+| xargs tldr
 ```
 
-# philosophy more?
-in school, i was told to never 
-couldn't tell you who said never do this, but i do remember hearing that.
-it's like saying you can't depend on a webservice, because it's not in the same internet as your webservice.
-
-```cpp
-// g++ -x c++ -
-#include <iostream>
-
-int main() {
-    std::system("echo 👋🌍");
-    return 0;
-}
+# fzf path
+fuzzy find all executables in your path
+```sh
+$(echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf)
 ```
 
 # more topics that i won't get into

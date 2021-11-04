@@ -24,8 +24,8 @@ presentation software i'm using is called lookatme.
 
 i'm going to cover a lot of content in the next 40 minutes. if you feel lost,
 we'll have a few questions at the end, you can rewatch this online, and i also
-have a keylogger running at the bottom right of the screen so i'll try not to
-type any sensitive passwords for you.
+have a keylogger running at the bottom right of the screen so i hope that
+helps.
 
 by the end of this presentation i hope you feel motivated to use the
 commandline a bit more than you currently do as part of your daily workflow.
@@ -36,54 +36,36 @@ lucky, nothing will go wrong. so let's get started.
 
 <history of terminal emulator>
 
-the terminal emulator has a pretty neat history and actually starts with the
-invention of the electric telegraph. for the telegraph to work, you need a
-sender and receiver, a wire between the two, and some sort of binary encoding
-to send signals to the other person. in many early implementations of the
-telegraph, both the sender and receiver will memorize that binary encoding to
-communicate with each other.
+the terminal emulator has a pretty neat history, and it kind starts with
+teleprinters. teleprinters were these typewriter like devices in the early
+1900s that were connected to the telegraph system. as you type a message, it
+prints your message to paper as well as sends the message over the telegraph
+wire. another teleprinter receives that message and prints it to their piece of
+paper character by character.
 
-alongside the growing popularity of the telegraph, various forms of typewriters
-were invented, the most notable one being the sholes and glidden typewriter.
-this typewriter was the first typewriter to use the qwerty layout and because
-it was a commercial success, most people use the qwerty layout today.
+computers then came along in the 1950s, operating by a punch card system. once
+computers started implementing time sharing in the 1960s, using teleprinters to
+interact with computers started to become more popular.
 
-now that these two great innovations exist in the late 1800s or early 1900s,
-people started thinking, "hey, what if we combine the electric telegraph with
-the typewriter", and that's exactly what happened. we can give the sender and
-receiver typewriter-like devices called teleprinters. the sender can type out a
-message, verify he typed the correct thing on his piece of paper, and press
-send. the receiver can then watch his teleprinter type out the message the
-sender sent and reply to that message if he wants.
-
-later on, computers started to get popular around the 1950s. now that we have
-these computers, instead of using a teleprinter to communicate with another
-person, what if you used a teleprinter to communicate with a computer? again,
-that's exactly what happened, though not until interactive computer use was
-more cost efficient with the development of time sharing.
-
-quickly after computer integration with teleprinters started to gain
-popularity, computer terminals were created and had a bunch of nice features
-over teleprinters including, not being loud, displaying characters instantly,
-being able to modify characters anywhere on a screen, and of course these
-computer terminals made the world greener by using less paper.
+computer terminals then came along in the 1970s with a bunch of nice features
+over teleprinters including, not too being loud, displaying characters
+instantly, being able to modify characters anywhere on a screen, and of course
+making the world greener by using less paper.
 
 finally in our world of 4k monitors, we run programs called "terminal
-emulators" to imitate these earlier "computer terminals". windows, mac, and linux all
-have default terminal emulators. kitty, terminator, alacritty, and xterm are a
-few of the many others.
+emulators" to imitate these earlier "computer terminals". windows, mac, and
+linux all have default terminal emulators. kitty, terminator, alacritty, and
+xterm are a few of the many others.
 
 <history of command line>
 
-when i mention "the command line", i am specifically referring to the unix
-command line. i don't know anything about powershell, so don't ask me. the
-history of the unix command line is heavily tied to the history of the unix
-operating system. the story of unix starts in the 1960s and 70s with a group of researchers
-at bell labs who were working on an operating system called multics. they became
-frustrated with the complexity of multics, so they abandoned that project to
-work on something smaller, which later became unix. unix began to be
-distributed to universities throughout the 70s and 80s. macos and linux later
-built off unix in the 90s. and the rest is history.
+the history of the commandline is really just the history of the unix operating
+system. the story of unix takes place in the 1960s and 70s with a group of
+researchers at bell labs who were working on an operating system called
+multics. they became frustrated with the complexity of multics, so they
+abandoned that project to work on something smaller, which later became unix.
+unix began to be distributed to universities throughout the 70s and 80s. macos
+and linux were later built off unix in the 90s. and the rest is history.
 
 one of the reasons unix and the commandline have been so successful is because
 of the unix philosophy. There are many definitions of the "Unix Philosophy",
@@ -95,25 +77,22 @@ said,
 write programs to work together. write programs to handle text streams, because
 that is a universal interface."
 
-alright, the history lesson is over, so let's do some things in the command
-line!
+---
 
 in unix, the shell is a program that makes it easy to run other programs
-interactively. unix has had a shell or sh command a since version 1. it was
-originally known as the "thompson shell", but later rewritten by stephen bourne
-in version 7 and is now known as the bourne shell. the bourne shell is
-installed on almost every unix based operating system today, including the one
-i'm presenting on, so let's check it out.
+interactively. the default shell for unix is called the bourne shell. this
+shell is on almost every unix based operating system including this one, so
+let's check it out.
 
-i've split my screen with a shell running at the bottom. if i want to run the
-bourne shell, i can type sh. the bash shell was an attempt to rewrite and
-improve the bourne shell. and there are many other shells out there you can
-install. zsh is the shell I use, it's the first one you saw and the default on
-my system. fish is a popular one i installed
-for this presentation, and nu is a new one i heard of recently, but haven't
-tried. you can leave most shells by using the built in "exit" command or by
-sending the end of file character with ctrl-d. you can usually clear the screen
-with the "clear" command or ctrl-l.
+i've split my screen and will be running commands at the bottom. if i want to
+run the bourne shell, i can type sh. the bash shell attempts to improve the
+bourne shell. zsh and fish both attempt to improve bash. and there are many
+other shells out there that you can try. i personally use zsh and that is the
+shell i will be using throughout this presentation.
+
+you can leave most shells by using the built in "exit" command or by sending
+the end of file character with ctrl-d. you can usually clear the screen with
+the "clear" command or ctrl-l.
 
 when you use the shell, you are always located within a directory. to see
 which directory that is, type pwd or print working directory. to change your
@@ -125,23 +104,28 @@ we can view the files in a directory with "ls". "cd .." will take us up a
 directory. we can use the "find" command to list all the files in this
 directory recursively. you can see that it printed out a bunch of stuff. a lot
 of these files are from the hidden git directory. the "fd" command is a modern
-replacement to the find command that you can install. fd by default does not show
+replacement to find that you may want to install. fd by default does not show
 hidden files and it gives us nice colors.
 
-just like you can touch your computer screen, you can touch files too with the
-touch command. this causes the last edit timestamp of that file to update. ls
--l will show those timestamps. if i touch a file and run ls -l again, you can
-see that the timestamp has been updated. touch has a nice side effect of
-creating an empty file if the file does not exist.
+just like you can touch things in real life, you can touch files in the
+commandline with the touch command. this causes the edit timestamp of a file to
+update. ls -l will show those timestamps. touch star will touch everything in
+this directory. if i run ls -l again, you can see that all the timestamp are
+now different. touch has a nice side effect of creating an empty file if the
+file does not exist.
 
-use cp to copy files. use mv to rename files. or move them. and you can delete
-files with rm.
+to copy files, use cp. use mv to rename files. or move them. you can delete
+files with rm. and delete empty directories with rmdir.
 
-next up, "echo", which just prints what you tell it to. we can redirect this to
-a file and see that there is no output. but there is now a file named says. cat
-can be used to print the contents of a file. cat says, enter, "meow". cat actually
-stands for concatenate, so if you pass multiple files to it, it will print both
-those files out. cat says what, meow me-ow.
+if you want to view the contents of a file as plain text, use
+the cat command. bat is a neat utility you can install that imitates cat, but
+also provides syntax highlighting for a bunch of file types.
+
+next up, "echo", which just prints what you tell it to. we can redirect the
+output to a file with the greater than sign. you can see there is no output,
+but there is now a file named says. cat can be used to print the contents of a
+file. cat actually stands for concatenate, so if you give it two filenames, it
+will print out both files.
 
 ```
 echo testing
@@ -150,16 +134,11 @@ echo me-ow > what
 ```
 
 the pipe operator can be used to pass the output of one program to the input of
-another. if i type echo hello, it prints hello. if i pipe that to cat, it still
-prints hello, so that's not very interesting.
+another. if i type echo hello, then pipe that to cat, it still prints hello, so
+that's not very interesting.
 
-but if i type fd to show all the files, then pass the output to head and ask
-for only the first two lines, it shows me only the first two lines. i can do
-the same thing with tail and only show the last two lines.
-
-the yes command prints the same thing infinitely until you stop it with ctrl-c.
-if i pipe the output of this command to cat, it still does the same thing, so
-it's still
+if i type fd, and pipe that to head, specifing to only read the first 2 lines. it
+works. i can do the same thing with tail to get the last two lines.
 
 ---
 
@@ -198,4 +177,28 @@ correct. i could just make some selections and execute a command on each one.
 | g++ -x c++ -
 in kak: which <cmd> | zsh (shows if things are actually executables or not.)
 
-ps $$ | python3 -c 'import sys; print(sys.stdin.read().split()[-1])' | xargs
+termdown mention
+
+```
+cat LICENSE
+| tr ' ' '\n' 
+| sed -E 's/\W//g'
+| sort 
+| python -c 'import sys; print(sys.stdin.read().strip().lower())' 
+| uniq -c 
+| sort -n
+| tail -n 1
+| awk '{print $2;}'
+| python -c 'import sys; print(sys.stdin.read().split()[-1])'
+```
+
+cat LICENSE
+| sed -E 's/ /\n/g'
+| sed -E 's/\W//g'
+| grep -vE '^$'
+| awk '{print tolower($0);}'
+| sort
+| uniq -c
+| sort -n
+| tail -n 1
+| awk '{print $2;}'
