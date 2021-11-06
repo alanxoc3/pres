@@ -13,17 +13,13 @@ alan morgan:
 ./pres title
 ```
 
-# terminal emulator history
-- telegraph: morse code, baudot code
-- typewriters: sholes & glidden
-- teleprinter: teletype model 33, creed model 7
-- computer terminals: datapoint 3300, ibm 2250, vt100, adm-3a
-- terminal emulators: kitty, terminator, alacritty, xterm
-
-# command line history
-- 1964: work on multics begins
+# terminal & command line history
+- 1908: first teleprinter
+- 1948: first modern computer
+- 1964: first computer terminal
 - 1969: work on unix begins
 - 1975: unix is distributed outside bell labs
+- 1976: first computer terminals with movable cursor
 - 1991: work on linux begins
 - 1999: mac os is now unix based
 
@@ -165,3 +161,4 @@ Some possibly related links:
 - [Punch Card Programming](https://www.youtube.com/watch?v=KG2M4ttzBnY)
 - [Command Line History](https://en.wikipedia.org/wiki/Command-line_interface#History)
 - [Silly Command Line Tools](https://opensource.com/article/18/12/linux-toy-boxes)
+- https://en.wikipedia.org/wiki/History_of_computing_hardware
