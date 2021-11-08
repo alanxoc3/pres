@@ -23,66 +23,34 @@ alan morgan:
 - 1991: work on linux begins
 - 1999: mac os is now unix based
 
-> this is the unix philosophy: write programs that do one thing and do it well.
-> write programs to work together. write programs to handle text streams, because
-> that is a universal interface.
->
-> -- douglas mcilroy
-
 # the shell
 - sh: bourne shell
 - bash: gnu bourne-again shell
 - zsh: the z shell
 - fish: the friendly interactive shell
-- exit: leave a shell or ctrl-d
-- clear: clear the screen or ctrl-l or reset
-
-# multiplexing
-similar to gui-based tiling window managers (bspwm, i3, awesome, sway, amethyst, yabai).
-
-- screen: terminal multiplexer
-- tmux: newer terminal multiplexer
-
-other multiplexers/frameworks: byobu, zelij
 
 # basic navigation
+- exit: leave a shell or ctrl-d
+- clear: clear the screen or ctrl-l
 - pwd: print working directory
 - cd: change working directory
 - ls: list directory contents
-- find: search for files in a directory
+- mkdir, touch, cp, mv, rm, rmdir
 
-# file manipulation
-- mkdir: create a directory
-- touch: change file timestamps
-- cp: copy files
-- mv: rename/move files
-- rm: remove files
-- rmdir: remove a directory
-
-# files & executables
-- cat: concatenate files to standard output
-- file: determine file type
-- g++: c compiler
-- chmod: change file access permissions
-- which: locate program in path
-
-# env variables
-- echo: print something
-- $USER: current user
-- $PWD: current working directory
-- $HOME: current user's home directory
-- $PATH: directories where to look for executables
+# viewing files
+- cat: concatenate to standard output
+- head: print the first part of files
+- tail: print the last part of files
+- less: interface to view long output
 
 # the unix pipe
+- echo: print something
 - `>`: redirect stdout to a file
 - `|`: redirect stdout to stdin for another command
-- head: output the first part of a text stream
-- tail: output the last part of a text stream
-- less: interface to view long output
-- wc: print newline, word, and byte counts for text
+- grep: filter lines
 
 # unix pipe exercise
-try to print the word that is most common in a file:
+try to print the most common word of a file:
 
 ```sh
 cat LICENSE | ...
@@ -102,6 +70,26 @@ cat LICENSE
 | tail -n 1
 | awk '{print $2;}'
 ```
+
+# files & executables
+- file: determine file type
+- g++: c compiler
+- chmod: change file access permissions
+- which: locate program in path
+
+# env variables
+- $USER: current user
+- $PWD: current working directory
+- $HOME: current user's home directory
+- $PATH: directories where to look for executables
+
+# multiplexing
+similar to gui-based tiling window managers (bspwm, i3, awesome, sway, amethyst, yabai).
+
+- screen: terminal multiplexer
+- tmux: newer terminal multiplexer
+
+other multiplexers/frameworks: byobu, zelij
 
 # cli editors
 - ed: line oriented text editor
@@ -152,6 +140,12 @@ echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf
 - and many more...
 
 # references
+> this is the unix philosophy: write programs that do one thing and do it well.
+> write programs to work together. write programs to handle text streams, because
+> that is a universal interface.
+>
+> -- douglas mcilroy
+
 View this presentation as a markdown file at: [git.io/devcon2021](https://git.io/devcon2021)
 
 Some possibly related links:
@@ -162,3 +156,4 @@ Some possibly related links:
 - [Command Line History](https://en.wikipedia.org/wiki/Command-line_interface#History)
 - [Silly Command Line Tools](https://opensource.com/article/18/12/linux-toy-boxes)
 - https://en.wikipedia.org/wiki/History_of_computing_hardware
+- [Cat Ascii Art](https://www.asciiart.eu/animals/cats)
