@@ -1,72 +1,58 @@
-Alright, thanks x.
+alright, thanks x, and thanks to everyone here for listening into my
+presentation. i'm alan. i've been working here at clearwater analytics for
+about 3 years now. i've been using linux for about 10 years, and i'm obsessed
+with the command line.
 
-As x mentioned, I'm alan. I'm a Software Engineer here at Clearwater Analytics.
-I've been using Linux for about 10 years now. And I'm obsessed with the command
-line.
+this presentation will be a little different than what you may be used to
+because the entire presentation will be completely contained within a command
+line type environment. and when i say everything, i mean everything. including
+the presentation sofware i use and gifs.
 
-Now this presentation will be a little different than what you may be used to,
-because everything you see on this screen will be completely contained within
-a terminal emulator.
+the commandline is the title of my presentation. i'm going to be covering a lot
+of content in the next 40 minutes or so. if you feel lost, we'll have a few
+questions at the end, you can always rewatch this presentation online, and i
+have a keylogger running at the bottom right of the screen.
 
-And when I say everything, I mean everything.
+by the end of this presentation i hope you're motivated to use the commandline
+a little bit more than you currently do as part of your daily workflow.
 
-the command line
+from here, i'll give you a quick history lesson, then you can watch me run a
+bunch of random commands. if we're lucky, nothing will go wrong, so let's get
+started.
 
-What you see here is probably the coolest part of the presentation, so i'll
-let you soak it in for a minute while i briefly explain my setup.
+for the hardware related history of the command line, i'd argue that it all
+begins with the invention of teleprinters.
 
-the terminal emulator i'm using is called alacritty, the bottom bar you see is
-from me running tmux locally on my laptop. the top bar is from me running tmux
-remotely through ssh on an arch linux machine. and the powerpoint-like
-presentation software i'm using is called lookatme.
+a teleprinter was a typewriter like device, popular in the early 1900s, that
+could both send and receive telegraph messages. for example a person could type
+up a message on a teleprinter and when they send it, the receiving teleprinter
+would automatically type that same message out to a piece of paper.
 
-i'm going to cover a lot of content in the next 40 minutes. if you feel lost,
-we'll have a few questions at the end, you can rewatch this online, and i also
-have a keylogger running at the bottom right of the screen so i hope that
-helps.
+computers emerged around the 1950s. as computers improved, many people switched
+from using punch cards to using teleprinters to interact with computers.
+computer terminals later came along with a few benefits to teleprinters
+including, being faster, being quieter, and of course making the world greener
+by using less paper. computer terminals improved in the 70s with colors and
+a movable cursor. guis started taking over in the 80s. and today we use
+terminal emulator programs to access the command line.
 
-by the end of this presentation i hope you feel motivated to use the
-commandline a bit more than you currently do as part of your daily workflow.
+for the software related history of the command line, i'd argue that it all
+begins with the implementation of time sharing.
 
-from here i'll go over some of the history of the terminal emulator and the
-command line, then you can watch me run a bunch of random commands. if we're
-lucky, nothing will go wrong. so let's get started.
+time sharing made it possible for multiple users to use one computer at the
+same time by having the computer constantly switch between tasks. this means
+that expensive computers were now both easier to use and more accessible.
 
-the terminal emulator has a pretty neat history, and it kind starts with
-teleprinters. teleprinters were these typewriter like devices in the early
-1900s that were connected to the telegraph system. as you type a message, it
-prints your message to paper as well as sends the message over the telegraph
-wire. another teleprinter receives that message and prints it to their piece of
-paper character by character.
+in 1964 a large group of researchers spanning multiple institutions started
+working on a revolutionary operating system called multics. some of those
+researchers from at&t's bell labs abandoned the multics project because they
+felt like the project was overly complex. and they started a much smaller
+operating system project called unix. the command line we have today comes from
+unix and many of the tools that were available to early versions of unix are
+still available and useful today.
 
-computers then came along in the 1950s, operating by a punch card system. once
-computers started implementing time sharing in the 1960s, using teleprinters to
-interact with computers started to become more popular.
+unix was distributed to various institutions throughout the 70s and 80s. linux
+started becoming popular in the 90s. and today, almost anyone in the world can
+access a unix command line if they really want to.
 
-computer terminals then came along in the 1970s with a bunch of nice features
-over teleprinters including, not too being loud, displaying characters
-instantly, being able to modify characters anywhere on a screen, and of course
-making the world greener by using less paper.
-
-finally in our world of 4k monitors, we run programs called "terminal
-emulators" to imitate these earlier "computer terminals". windows, mac, and
-linux all have default terminal emulators. kitty, terminator, alacritty, and
-xterm are a few of the many others.
-
-the history of the commandline is really just the history of the unix operating
-system. the story of unix takes place in the 1960s and 70s with a group of
-researchers at bell labs who were working on an operating system called
-multics. they became frustrated with the complexity of multics, so they
-abandoned that project to work on something smaller, which later became unix.
-unix began to be distributed to universities throughout the 70s and 80s. macos
-and linux were later built off unix in the 90s. and the rest is history.
-
-one of the reasons unix and the commandline have been so successful is because
-of the unix philosophy. There are many definitions of the "Unix Philosophy",
-the one i like most is attributed to Douglas McIlroy he was the creator of the
-unix pipe and one of those researchers at bell labs in the 60s and 70s. he
-said,
-
-"this is the unix philosophy: write programs that do one thing and do it well.
-write programs to work together. write programs to handle text streams, because
-that is a universal interface."
+with that said, let's start actually using the command line.
