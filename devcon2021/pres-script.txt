@@ -55,4 +55,120 @@ unix was distributed to various institutions throughout the 70s and 80s. linux
 started becoming popular in the 90s. and today, almost anyone in the world can
 access a unix command line if they really want to.
 
-with that said, let's start actually using the command line.
+with that said, let's start actually using the command line. beginning with the
+shell.
+
+the shell is a program that makes it easy to run other programs interactively.
+i split my screen and i will run the echo command which just prints what i tell
+it to. sh is the shell that was distributed with unix. bash tried to improve
+sh. zsh is a modern shell that i use. fish is a modern shell that i don't use
+and there are many other shells out there.
+
+to exit a shell, type exit, or you can usually send the end-of-file character
+with ctrl-d. clear will clear your screen. ctrl-l usually clears your screen
+too. to see the directory you're currently in, run pwd. cd can change your
+directory. cd followed by a dash can bring you to the directory you were
+previously at. you can see that these two directories are indeed the same.
+cd .. will bring you to the parent directory. ls can show you all the files and
+folders in your directory. and now we'll now cd back into the directory we were
+originally at.
+
+looking at this directory, you can see there are some files, so let's learn
+about a few command line editors. ed was the editor distributed with unix. you
+can pass a filename to ed and it will allow you to edit that file by running
+some commands. i don't actually know how to use ed, i only know that ed was
+notoriously difficult to use, which prompted someone to write em or an editor
+for mortals.
+
+after em. ex and vi came along. as you can see, vi is a full screen editor.
+while ed would have been compatible with teleprinters, vi would have needed a
+computer terminal in order to run. vim tries to improve vi with better
+defaults, a highlighting mode, as well as its own scripting language.
+
+nano is a beginner friendly editor with sane defaults as well as a list of
+shortcuts at the bottom, you can use the arrow keys to move and there is a list
+of keyboard shortcuts at the bottom. emacs is an editor with terrible defaults,
+but is extremely configurable. neovim is a modern fork of vim that comes with a
+built in lua interpreter, tresitter parser for advanced syntax highlighting,
+and language server protocol implementation for ide-like features. kakoune is a
+less-known vim spinoff and is the editor that i actually use. it changes some
+of the basic keybindings that comes with vim and works really well with
+multiple cursors. for example, i can select the whole file, prefix every line
+with a dash, join all the lines together, and remove all spaces.
+
+back to the command line, i think we're ready to go over the unix pipe.
+starting with the redirection operator, we can take the output of a command and
+redirect it into a file. let's first look at the files in this directory. then
+echo hello, you can see the output is hello. followed by the redirection
+operator and a file name, you can see it created a new file. we'll use the cat
+command to see what's inside that file and it looks like it matches the echo
+command we ran earlier.
+
+the pipe operator is used to take the output of one command and make it the
+input of another command.
+
+echo hello prints hello, if we pipe that to the cat command, it doesn't do
+anything interesting, because cat just displays what it's given.
+
+so let's try something else. i made my shell full screen temporarily. let's try
+catting this text file. as you can see, the output of this cat command is a
+cat. we can pipe that into the head command which by default gives you the top
+10 lines of a file or the cat's head. likewise with the tail command, we can
+get the bottom 10 lines, which is, you guessed it, the cat's tail.
+
+looking at this cat more closely, the scientist in me wants to ask which
+character occurs the most often in this cat picture. so let's use the unix pipe
+to figure that out.
+
+the first thing i would do is get each character on it's own line, because a
+lot of commands work better at a line level. we can use sed to achieve this.
+the dash e is for extended regular expressions. we want to substitute every
+character on a line with whatever that character is followed by a new line. and
+do this globally for every match on the line.
+
+if you ask me, it looks like our cat is having a bad day, but this is all in
+the name science, so let's continue.
+
+next, i'd probably get rid of all the empty lines, so let's use awk to do that.
+awk a command that comes with a simple programming language. first you filter
+each line with a regular expression. then you can run a command on that filter.
+i'd like every line that has at least 1 character and that character is not a
+space. and i'd like to print that line. looking through the output, i don't see
+any blank lines, so that's a good sign. next, sorting the output is probably a
+good idea. the uniq command can be used to remove duplicate consecutive lines.
+we can now see all the different characters that make up the cat. the -c option
+gives us the number of times each line was printed. we can sort that again,
+but we want a numeric sort. and as you can see, the most common character in
+that cat is a period.
+
+alright, enough talking about cats. let's switch the subject to something a
+little more human and talk about man. man stands manual. you may have heard the
+saying, "a dog is a man's best friend". while that is indeed true, man is a
+cat's best friend. he knows everything about a cat, the description of a cat.
+the different parameters you can pass to the cat, who created the cat, and so
+on.
+
+there are a lot of things you have to keep track of when using the command
+line. if you forget something, you can open up the manual page to refresh your
+memory. there are other ways to view documentation in the command line though.
+many commands implement a `--help`. so you can try that if you want. tldr is a
+cool project on github that is meant to be your goto resource before you open
+up a man page. looking at the output, it shows me a quick description of the
+command as well as some of the most common ways to use the command according to
+the tldr community.
+
+you can also have your own self documentation. there are many ways to do this.
+i personally do this in the form of aliases. aliases provide a way to shorten
+commands. to create an alias, use the alias command. this alias will look like
+'hi=echo hello'. now every time i type hi, it will run the command 'echo
+hello'. 'alias hi' will show me what hi is. i actually use the alias command
+often enough that i have an alias for the alias command. i have another alias
+for editing aliases. when i type ea, you can see a bunch of my aliases.
+
+you may have noticed that my "ls" command is really pretty, that's because it's
+actually an alias for another program called exa. exa is an ls clone with a
+knowledge of git and some other things like a tree view.
+
+rg is a grep clone, but better. fd is a find clone, but better. bat is like
+cat, but comes with syntax highlighting. and there are many other improvements
+out there, including a really popular one called fzf.

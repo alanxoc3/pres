@@ -28,11 +28,11 @@ alan morgan:
 - 1991: work on linux begins
 
 # the shell
+- echo: print text
 - sh: bourne shell
 - bash: gnu bourne-again shell
 - zsh: the z shell
 - fish: the friendly interactive shell
-- echo: print text
 
 # navigation
 - exit: leave a shell or ctrl-d
@@ -51,11 +51,11 @@ alan morgan:
 - kak: a spinoff of vim
 
 # unix pipe
-- `|`: redirect stdout to stdin for another command
+- `>`: redirect stdout to a new file
 - cat: concatenate to standard output
+- `|`: redirect stdout to stdin for another command
 - head: print the first part of files
 - tail: print the last part of files
-- less: interface to view long output
 
 # unix pipe exercise
 which character is the most common in a file?
@@ -71,31 +71,53 @@ cat x
 ```
 
 # documentation
-- dotfiles: a place to manage your configuration & notes
-- alias: create an alias of a complex command
-- `--help`: common option on commands
 - man: format and display manual pages
-- info: read info documents
+- `--help`: common option on commands
 - tldr: documentation before a man page
+- alias: create an alias of a complex command
 
 # modern tooling upgrades
-- rg: grep clone but faster
-- fd: find clone with better interface
 - exa: ls clone with knowledge of git
+- rg: grep clone but faster & better
+- fd: find clone but faster & better
 - bat: cat clone with syntax hilighting
-- tmux: a terminal window manager
-
-# TODO: fuzzy finding
 - fzf: commandline fuzzy finder
 
-fuzzy find all tldr tldr help snippets
+# fzf with fd
 ```sh
-tldr -l | tr "'" '"' | jq .[] -r | fzf | xargs tldr
+fzf_cat_file() {
+    cat $(fd -t f | fzf -m)
+}
 ```
 
-fuzzy find all executables in your path
 ```sh
-echo $PATH | tr : ' ' | xargs fd . --exact-depth 1 2>/dev/null | fzf
+fzf_cd_dir() {
+    cd $(fd -t d | fzf)
+}
+```
+
+# fzf shell history
+```sh
+fzf_exec_history() {
+    $(fc -rl 1 | fzf --nth 2.. | awk '{$1="";print $0;}')
+}
+```
+
+# fzf emojis
+```sh
+fzf_emoji() {
+    emoji-fzf preview | fzf -m --with-nth 2.. -d ' ' | cut -d ' ' -f 1 | emoji-fzf get
+}
+```
+
+# fzf with rg and kak
+```sh
+fzf_rg() {
+    RG_LINE=$(rg '' -n --color always | fzf --with-nth 2.. -d ':')
+    FILE=$(cut -d ':' -f 1 <<< $RG_LINE)
+    LINE=$(cut -d ':' -f 2 <<< $RG_LINE)
+    [[ -n "$FILE" ]] && kak +$LINE $FILE
+}
 ```
 
 # 😟 many commands i don't have time for
