@@ -169,6 +169,134 @@ you may have noticed that my "ls" command is really pretty, that's because it's
 actually an alias for another program called exa. exa is an ls clone with a
 knowledge of git and some other things like a tree view.
 
-rg is a grep clone, but better. fd is a find clone, but better. bat is like
-cat, but comes with syntax highlighting. and there are many other improvements
+(cd ~/repos/pres/)
+a ls
+/bin/ls
+exa
+a lst
+lst
+
+bat is like cat, but comes with syntax highlighting.
+
+cat main.cpp
+bat main.cpp
+
+fd is a find clone, but better.
+
+find .
+fd
+fd -t f
+fd -t d
+
+rg is a grep clone, but better.
+
+fd | rg txt
+rg echo
+
+and there are many other improvements
 out there, including a really popular one called fzf.
+
+fzf is a fuzzy filter.
+
+fd -t f
+fd -t f | fzf
+bat $(fd -t f | fzf)
+bat <ctrl-t>
+<alt-z> [bat] main.cpp
+<alt-z> [rg kak] Software
+
+lots more you can do with fzf. if we have extra time, we could go over more.
+
+tmux is a window manager and multiplexer. you've been watching me use tmux
+throughout this entire presentation. the bottom bar comes from me running tmux
+locally. the top bar comes from me running tmux remotely though ssh on an arch
+linux machine. tmux being a window manager, means you can make windows full
+screen and create new workspaces like many modern gui-based window managers.
+tmux being a multiplexer means that you can lose connection with tmux, and not
+lose any of your work. another cool thing about tmux is that it's great for
+pair programming.
+
+you've also been watching me use lookatme this whole time. i first heard about
+lookatme by watching some vimconf presentations. lookatme is just a markdown
+presentation tool. you can see that my presentation is actually a markdown
+file. when i run lookatme, it starts the presentation.
+
+lookatme ./README.md
+
+asciinema is an easy way to record videos in the commandline. i've used
+asciinema as part of opening bug reports to open source projects multiple times
+in the past.
+
+asciinema rec
+cat asciiart.txt | cowsay -n
+exit
+<ctrl-z> [tmux] /tmp/asciinemafile
+
+ranger is terminal ui for navigating files. it's more similar to "finder" on
+mac, or windows explorer. i don't use it much, but it's especially nice for
+navigating file systems you're less familiar with.
+
+ranger
+
+pass is a cli based password manager i use. it uses gpg to encrypt files that
+contain passwords.
+
+man pass
+
+there are a few cli based web browsers. i'd consider w3m to be the best one at
+the moment, though it doesn't support javascript. but that's ok, because if i'm
+using the command line for everything so far, i probably don't like javascript.
+
+w3m ddg.gg
+a ddg
+ddg hello world
+ddg \!g hello world
+
+there are other internets within the internet. one is called gemini. instead of
+websites, gemini has capsules that host mostly plain-text static content.
+amfora is one of many browsers for these gemini capsules. here is my own gemini
+capsule. and here is a capsule that shows updates from other capsules.
+
+a amx
+amx
+a ama
+ama
+
+mpv is the best media player i've ever come across, and it's designed as a cli
+tool. i use mpv to play webradios, which are usually endless ".ogg" files.
+
+a chiptune
+a tilderadio
+a anonradio
+
+you can use mpv to play gifs.
+
+./pres title
+./pres teleprinter
+
+and you can even use mpv to play youtube videos.
+
+./pres youtube
+
+in case you haven't noticed yet, you've all been rick rolled.
+
+himalaya is a pretty new cli based email client you can find on github.
+
+himalaya
+
+irc is the chat service before the modern internet. ii is a simple, yet
+ingenious program that uses linux fifos (named pipes) to interface with irc
+servers. this is a beautiful and unique example of the unix philosophy in
+action.
+
+irc-run
+irc-feed
+cd ~/irc/libera/#devcon2021
+echo hello world > in
+
+unfortunately, that's all i have time for. there's a lot of fun stuff out there
+when it comes to the command line. so i hope you've learned something and i
+hope i converted some of you over to the dark side.
+
+you can find this presentation markdown file at git.io/devcon2021. and i'll
+open up the remaining time for questions.

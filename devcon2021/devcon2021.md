@@ -20,12 +20,19 @@ alan morgan:
 - 1976: first computer terminals with movable cursor
 - 1979: first guis appear
 
-# 🐧 history of command line software
+# 🔔 history of command line software
 - 1961: time sharing is implemented
 - 1964: work on multics begins
 - 1969: work on unix begins
 - 1975: unix is distributed outside bell labs
 - 1991: work on linux begins
+
+# 🐧 the unix philosophy
+> this is the unix philosophy: write programs that do one thing and do it well.
+> write programs to work together. write programs to handle text streams, because
+> that is a universal interface.
+>
+> -- douglas mcilroy
 
 # 🐚 the shell
 - echo: print text
@@ -57,7 +64,7 @@ alan morgan:
 - head: print the first part of files
 - tail: print the last part of files
 
-# 🏊 unix pipe exercise
+# 😺 unix pipe exercise
 which character is the most common in a file?
 
 ```sh
@@ -75,43 +82,43 @@ cat x
 - `--help`: common option on commands
 - tldr: documentation before a man page
 - alias: create an alias of a complex command
+- dotfiles: one place your config files
 
 # 🦇 modern tooling upgrades
 - exa: ls clone with knowledge of git
 - bat: cat clone with syntax hilighting
-- rg: grep clone but faster & better
 - fd: find clone but faster & better
+- rg: grep clone but faster & better
 - fzf: commandline fuzzy finder
 
 # 🧰 more modern tooling upgrades
 - tmux: terminal multiplexer
-- ranger: commandline file navigator
 - lookatme: terminal markdown presentations
-- mpv: play music & videos
-- pass: a cli for your passwords
 - asciinema: record your screen
+- ranger: commandline file navigator
+- pass: a cli for your passwords
 
 # 🌏 wasting time on the internet
-- himalaya: a cli for your email
-- w3m: a cli browser
-- ii: irc using unix fifos
+- w3m: a web browser
 - amfora: gemini capsule browser
+- mpv: gif, webradio, youtube
+- himalaya: a cli for your email
+- ii: irc using unix fifos
 
 # 🪰 buzz words we don't have time for
 wget, curl, nmap, socat, nginx, diff-so-fancy, gh, hugo, jekyll, ttrack,
-concards, jq, kak-ansi, browsh, lynx, irssi, go, cargo, npm, python, lua,
-weechat, mutt, pubnix, small net, gopher, pacman, yay, apt, brew, pacaur,
-alacritty, feh, dmenu, rofi, sxhkd, yt-dlp, bspwm, keynav, agate, kineto,
-systemctl, journalctl...
+concards, jq, screen, kak-ansi, browsh, lynx, irssi, go, cargo, npm, python,
+lua, weechat, mutt, pubnix, small net, gopher, pacman, yay, apt, brew, pacaur,
+alacritty, feh, zathura, dmenu, rofi, sxhkd, yt-dlp, bspwm, keynav, agate,
+gpg, kineto, systemctl, journalctl, qutebrowser, helix...
 
 # 🔗 links:
 view this presentation as a markdown file at: [git.io/devcon2021](https://git.io/devcon2021)
 
-- [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
-- [Language Discussion](https://www.youtube.com/watch?v=xnCgoEyz31M)
-- [Baudot Code](https://en.wikipedia.org/wiki/Baudot_code)
-- [Punch Card Programming](https://www.youtube.com/watch?v=KG2M4ttzBnY)
-- [Command Line History](https://en.wikipedia.org/wiki/Command-line_interface#History)
-- [Silly Command Line Tools](https://opensource.com/article/18/12/linux-toy-boxes)
-- [History of Computing Hardware](https://en.wikipedia.org/wiki/History_of_computing_hardware)
-- [Cat Ascii Art](https://www.asciiart.eu/animals/cats)
+some references:
+- [cat ascii art](https://www.asciiart.eu/animals/cats)
+- [command line history](https://en.wikipedia.org/wiki/Command-line_interface#History)
+- [history of computing hardware](https://en.wikipedia.org/wiki/History_of_computing_hardware)
+- [language discussion](https://www.youtube.com/watch?v=xnCgoEyz31M)
+- [silly command line tools](https://opensource.com/article/18/12/linux-toy-boxes)
+- [unix philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)

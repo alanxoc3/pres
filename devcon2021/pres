@@ -3,8 +3,10 @@ if [[ "$#" -eq 0 ]]; then
     lookatme --live -e script ./devcon2021.md
 elif [[ "$1" == 'title' ]]; then
     tmux split-window -Zv zsh -ilc 'CACA_DRIVER=ncurses mpv --no-terminal --aid=no -vo caca --loop inf ./title.gif'
-elif [[ "$1" == 'teletype' ]]; then
-    tmux split-window -Zv zsh -ilc 'CACA_DRIVER=ncurses mpv --no-terminal --aid=no -vo caca --loop inf ./teletype.gif'
+elif [[ "$1" == 'teleprinter' ]]; then
+    tmux split-window -Zv zsh -ilc 'CACA_DRIVER=ncurses mpv --no-terminal --aid=no -vo caca --loop inf ./teleprinter.gif'
+elif [[ "$1" == 'youtube' ]]; then
+    tmux split-window -Zv zsh -ilc 'CACA_DRIVER=ncurses mpv --no-terminal --aid=no -vo caca --loop inf https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 elif [[ "$1" == 'debug' ]]; then
     tmux split-window -Zv zsh -ilc "echo testing: ${@:2} ; cat"
 fi
