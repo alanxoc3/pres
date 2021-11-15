@@ -17,15 +17,15 @@ alan morgan:
 - 1908: first teleprinter
 - 1948: first modern computer
 - 1964: first computer terminals
-- 1976: first computer terminals with movable cursor
 - 1979: first guis appear
+- 2021: terminal emulators
 
 # 🔔 history of command line software
 - 1961: time sharing is implemented
 - 1964: work on multics begins
 - 1969: work on unix begins
-- 1975: unix is distributed outside bell labs
 - 1991: work on linux begins
+- 2021: command line is everywhere
 
 # 🐧 the unix philosophy
 > this is the unix philosophy: write programs that do one thing and do it well.
@@ -35,11 +35,11 @@ alan morgan:
 > -- douglas mcilroy
 
 # 🐚 the shell
-- echo: print text
 - sh: bourne shell
 - bash: gnu bourne-again shell
 - zsh: the z shell
 - fish: the friendly interactive shell
+- echo: print text
 
 # 🧭 navigation
 - exit: leave a shell or ctrl-d
@@ -64,19 +64,6 @@ alan morgan:
 - head: print the first part of files
 - tail: print the last part of files
 
-# 😺 unix pipe exercise
-which character is the most common in a file?
-
-```sh
-cat x
-| sed -E 's/(.)/\1\n/g'
-| awk '/\S/{print $1;}'
-| sort
-| uniq -c
-| sort -n
-| awk 'END {print $1;}'
-```
-
 # 📒 documentation
 - man: format and display manual pages
 - `--help`: common option on commands
@@ -89,13 +76,13 @@ cat x
 - bat: cat clone with syntax hilighting
 - fd: find clone but faster & better
 - rg: grep clone but faster & better
-- fzf: commandline fuzzy finder
+- fzf: command line fuzzy finder
 
 # 🧰 more modern tooling upgrades
 - tmux: terminal multiplexer
 - lookatme: terminal markdown presentations
 - asciinema: record your screen
-- ranger: commandline file navigator
+- ranger: command line file navigator
 - pass: a cli for your passwords
 
 # 🌏 wasting time on the internet
@@ -105,7 +92,7 @@ cat x
 - himalaya: a cli for your email
 - ii: irc using unix fifos
 
-# 🪰 buzz words we don't have time for
+# 💬 buzz words we don't have time for
 wget, curl, nmap, socat, nginx, diff-so-fancy, gh, hugo, jekyll, ttrack,
 concards, jq, screen, kak-ansi, browsh, lynx, irssi, go, cargo, npm, python,
 lua, weechat, mutt, pubnix, small net, gopher, pacman, yay, apt, brew, pacaur,
