@@ -79,16 +79,20 @@ alan morgan:
 - fzf: command line fuzzy finder
 
 # 🧰 more modern tooling upgrades
-- tmux: terminal multiplexer
-- lookatme: terminal markdown presentations
-- asciinema: record your screen
+- tmux: terminal window manager & multiplexer
+- lookatme: markdown presentation software
 - ranger: command line file navigator
 - pass: a cli for your passwords
 
-# 🌏 wasting time on the internet
+# ⏰ wasting time in the cli
+- fortune: predict the future
+- cowsay: you guessed it
+- asciinema: record your terminal screen
+- mpv: gif, webradio, youtube
+
+# 🌏 wasting time in the cli on the internet
 - w3m: a web browser
 - amfora: gemini capsule browser
-- mpv: gif, webradio, youtube
 - himalaya: a cli for your email
 - ii: irc using unix fifos
 
